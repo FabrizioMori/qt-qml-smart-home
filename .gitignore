@@ -1,0 +1,23 @@
+# Qt Creator
+*.user
+*.user.*
+*.creator.user*
+.qtcreator/
+
+# Build directories
+build/
+build-*/
+cmake-build-*/
+
+# CMake generated files
+CMakeCache.txt
+CMakeFiles/
+CMakeUserPresets.json
+
+# Windows
+*.exe
+*.dll
+
+# System
+.DS_Store
+Thumbs.db
