@@ -48,12 +48,11 @@ ApplicationWindow {
             }
 
             // Apartment overview
-            Rectangle {
+            DashboardCard {
                 Layout.fillWidth: true
                 Layout.preferredHeight: 340
 
-                radius: 20
-                color: "#151E2B"
+                topColor: "#264552"
 
                 Text {
                     anchors.centerIn: parent
@@ -79,14 +78,13 @@ ApplicationWindow {
                         "Devices"
                     ]
 
-                    delegate: Rectangle {
+                    delegate: DashboardCard {
                         Layout.fillWidth: true
                         Layout.fillHeight: true
                         Layout.preferredWidth: 1
 
 
-                        radius: 20
-                        color: "#151E2B"
+                        topColor: "#264552"
 
                         Text {
                             anchors.centerIn: parent
@@ -105,13 +103,12 @@ ApplicationWindow {
                 spacing: 12
 
                 // Camera preview
-                Rectangle {
+                DashboardCard {
                     Layout.fillWidth: true
                     Layout.fillHeight: true
                     Layout.preferredWidth: 1
 
-                    radius: 20
-                    color: "#151E2B"
+                    topColor: "#264552"
 
                     Text {
                         anchors.centerIn: parent
@@ -122,13 +119,12 @@ ApplicationWindow {
                 }
 
                 // Energy consumption
-                Rectangle {
+                DashboardCard {
                     Layout.fillWidth: true
                     Layout.fillHeight: true
                     Layout.preferredWidth: 1
 
-                    radius: 20
-                    color: "#151E2B"
+                    topColor: "#264552"
 
                     Text {
                         anchors.centerIn: parent
@@ -150,12 +146,11 @@ ApplicationWindow {
             Repeater {
                 model: ["Weather", "Calendar", "Music"]
 
-                delegate: Rectangle {
+                delegate: DashboardCard {
                     Layout.fillWidth: true
                     Layout.fillHeight: true
 
-                    radius: 20
-                    color: "#151E2B"
+                    topColor: "#264552"
 
                     Text {
                         anchors.centerIn: parent

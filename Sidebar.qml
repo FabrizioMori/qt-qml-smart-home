@@ -43,12 +43,9 @@ Rectangle {
             }
         }
 
-        // Thin divider between app identity and navigation
-        Rectangle {
+        AppDivider {
             Layout.fillWidth: true
-            Layout.preferredHeight: 1
             Layout.bottomMargin: 18
-            color: "#334152"
         }
 
         Repeater {

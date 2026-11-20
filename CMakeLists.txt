@@ -24,6 +24,8 @@ qt_add_qml_module(appSmartHome
     QML_FILES
         Main.qml
         Sidebar.qml
+        DashboardCard.qml
+        AppDivider.qml
 
     RESOURCES
         assets/icons/dashboard.svg
