@@ -47,25 +47,15 @@ ApplicationWindow {
                 font.bold: true
             }
 
-            // Apartment overview
-            DashboardCard {
+            ApartmentOverviewWidget {
                 Layout.fillWidth: true
-                Layout.preferredHeight: 340
-
-                topColor: "#264552"
-
-                Text {
-                    anchors.centerIn: parent
-                    text: "Apartment Overview"
-                    color: "white"
-                    font.pixelSize: 22
-                }
+                Layout.preferredHeight: 440
             }
 
             // Status cards
             RowLayout {
                 Layout.fillWidth: true
-                Layout.preferredHeight: 40
+                Layout.preferredHeight: 50
                 spacing: 12
 
                 StatusCard {
