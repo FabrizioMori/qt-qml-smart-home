@@ -103,9 +103,9 @@ DashboardCard {
                     }
 
                     Text {
-                        text: "⌄"
+                        text: "v"
                         color: "#F0F4F7"
-                        font.pixelSize: 16
+                        font.pixelSize: 11
                         verticalAlignment: Text.AlignVCenter
                     }
                 }

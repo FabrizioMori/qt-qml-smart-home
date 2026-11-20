@@ -159,22 +159,10 @@ ApplicationWindow {
                 Layout.fillHeight: false
             }
 
-            Repeater {
-                model: ["Music"]
-
-                delegate: DashboardCard {
-                    Layout.fillWidth: true
-                    Layout.fillHeight: true
-
-                    topColor: "#264552"
-
-                    Text {
-                        anchors.centerIn: parent
-                        text: modelData
-                        color: "white"
-                        font.pixelSize: 20
-                    }
-                }
+            MusicWidget {
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+                Layout.minimumHeight: 270
             }
         }
     }

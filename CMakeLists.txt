@@ -28,6 +28,8 @@ qt_add_qml_module(appSmartHome
         AppDivider.qml
         WeatherWidget.qml
         CalendarWidget.qml
+        MusicWidget.qml
+        MusicControlButton.qml
 
     RESOURCES
         assets/icons/dashboard.svg
@@ -43,6 +45,19 @@ qt_add_qml_module(appSmartHome
         assets/icons/weather/partly-cloudy.svg
         assets/icons/weather/sun.svg
         assets/icons/calendar.svg
+        assets/icons/music/music-note.svg
+        assets/icons/music/heart.svg
+        assets/icons/music/heart-filled.svg
+        assets/icons/music/shuffle.svg
+        assets/icons/music/skip-back.svg
+        assets/icons/music/skip-forward.svg
+        assets/icons/music/pause.svg
+        assets/icons/music/play.svg
+        assets/icons/music/repeat.svg
+        assets/icons/music/chevron-down.svg
+        assets/images/music/golden-hour.svg
+        assets/images/music/night-drive.svg
+        assets/images/music/ocean-breeze.svg
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

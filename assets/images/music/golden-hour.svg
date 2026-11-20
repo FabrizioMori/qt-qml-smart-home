@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 180 180"><defs><clipPath id="rounded"><rect width="180" height="180" rx="19" ry="19"/></clipPath></defs><g clip-path="url(#rounded)">
+<defs><linearGradient id="sky" x2="0" y2="1"><stop stop-color="#657DA8"/><stop offset=".33" stop-color="#BC86A9"/><stop offset=".65" stop-color="#FF9366"/><stop offset="1" stop-color="#E55346"/></linearGradient><linearGradient id="sea" x2="0" y2="1"><stop stop-color="#4F536F"/><stop offset="1" stop-color="#192D40"/></linearGradient></defs>
+<rect width="180" height="180" fill="url(#sky)"/><circle cx="122" cy="95" r="26" fill="#FFD292" opacity=".27"/><rect y="132" width="180" height="48" fill="url(#sea)"/>
+<path d="M0 133 Q45 126 94 132 T180 129" fill="none" stroke="#F3A07D" opacity=".45" stroke-width="2"/>
+<path d="M0 163 Q43 158 70 161 T180 158 V180 H0Z" fill="#132C3C"/><path d="M88 180Q90 115 84 64" stroke="#152536" stroke-width="6" fill="none"/>
+<g stroke="#152536" stroke-width="5" stroke-linecap="round" fill="none"><path d="M84 67Q52 42 18 58"/><path d="M84 67Q58 24 36 21"/><path d="M84 67Q76 27 87 10"/><path d="M84 67Q103 34 133 34"/><path d="M84 67Q122 50 151 64"/><path d="M84 67Q118 78 128 101"/><path d="M84 67Q57 83 48 104"/></g>
+<g stroke="#152536" stroke-width="2.2" stroke-linecap="round" fill="none"><path d="M84 67Q36 48 23 71"/><path d="M84 67Q55 22 47 17"/><path d="M84 67Q104 18 118 22"/><path d="M84 67Q129 57 149 78"/><path d="M84 67Q53 77 42 91"/></g></g></svg>
