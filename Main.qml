@@ -1,90 +1,170 @@
 import QtQuick
-import QtQuick.Layouts
 import QtQuick.Controls.Basic
-
+import QtQuick.Layouts
 
 ApplicationWindow {
-    id: window
-    width: 640
-    height: 480
-    minimumWidth: 200
-    minimumHeight: 250
+    id: root
+
+    width: 1600
+    height: 900
+    minimumWidth: 1200
+    minimumHeight: 700
+
     visible: true
-    title: qsTr("Hello World")
-    property bool lightMode: Application.styleHints.colorScheme === Qt.Light
-    property color reallyDark: "#1f1f1f"
-    property color dark: "#262626"
-    property color reallyLight: "#e7e7e7"
-    property color light: "#e0e0e0"
+    title: "Smart Home"
+    color: "#0B1019"
 
-    GridLayout {
-        id: grid
-        columns: width < 400 ? 1 : 2
-        rowSpacing: 0
-        columnSpacing: 0
+    RowLayout {
         anchors.fill: parent
+        anchors.margins: 12
+        spacing: 6
 
-        Rectangle {
-            id: rectangle1
-            color: window.lightMode ? window.reallyLight : window.reallyDark
+        // =====================================
+        // LEFT SIDEBAR
+        // =====================================
+        Sidebar {
+            Layout.preferredWidth: 170
             Layout.fillHeight: true
+
+            onPageSelected: function(page) {
+                console.log("Selected page:", page)
+            }
+        }
+
+        // =====================================
+        // CENTRAL DASHBOARD
+        // =====================================
+        ColumnLayout {
             Layout.fillWidth: true
+            Layout.fillHeight: true
+            spacing: 16
 
-            ColumnLayout {
-                anchors.fill: parent
-                Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
+            // Header
+            Text {
+                text: "Welcome Home"
+                color: "white"
+                font.pixelSize: 30
+                font.bold: true
+            }
 
-                Label {
-                    id: text1
-                    color: window.lightMode ? window.dark : window.light
-                    font.pixelSize: 120
-                    fontSizeMode: Text.Fit
-                    text: qsTr("Hello World")
+            // Apartment overview
+            Rectangle {
+                Layout.fillWidth: true
+                Layout.preferredHeight: 340
+
+                radius: 20
+                color: "#151E2B"
+
+                Text {
+                    anchors.centerIn: parent
+                    text: "Apartment Overview"
+                    color: "white"
+                    font.pixelSize: 22
+                }
+            }
+
+            // Status cards
+            RowLayout {
+                Layout.fillWidth: true
+                Layout.fillHeight: false
+                Layout.preferredHeight: 110
+
+                spacing: 12
+
+                Repeater {
+                    model: [
+                        "Wi-Fi",
+                        "Air Quality",
+                        "Energy",
+                        "Devices"
+                    ]
+
+                    delegate: Rectangle {
+                        Layout.fillWidth: true
+                        Layout.fillHeight: true
+                        Layout.preferredWidth: 1
+
+
+                        radius: 20
+                        color: "#151E2B"
+
+                        Text {
+                            anchors.centerIn: parent
+                            text: modelData
+                            color: "white"
+                            font.pixelSize: 16
+                        }
+                    }
+                }
+            }
+
+            // Bottom dashboard
+            RowLayout {
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+                spacing: 12
+
+                // Camera preview
+                Rectangle {
                     Layout.fillWidth: true
                     Layout.fillHeight: true
-                    Layout.margins: 16
-                    horizontalAlignment: Text.AlignHCenter
-                    verticalAlignment: Text.AlignVCenter
+                    Layout.preferredWidth: 1
+
+                    radius: 20
+                    color: "#151E2B"
+
+                    Text {
+                        anchors.centerIn: parent
+                        text: "Front Door Camera"
+                        color: "white"
+                        font.pixelSize: 20
+                    }
+                }
+
+                // Energy consumption
+                Rectangle {
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+                    Layout.preferredWidth: 1
+
+                    radius: 20
+                    color: "#151E2B"
+
+                    Text {
+                        anchors.centerIn: parent
+                        text: "Energy Consumption"
+                        color: "white"
+                        font.pixelSize: 20
+                    }
                 }
             }
         }
 
-        Rectangle {
-            id: rectangle2
-            color: window.lightMode ? window.light : window.dark
+        // RIGHT SIDEBAR
+        ColumnLayout {
+            Layout.preferredWidth: 290
+            Layout.fillWidth: false
             Layout.fillHeight: true
-            Layout.fillWidth: true
+            spacing: 16
 
-            ColumnLayout {
-                anchors.fill: parent
-                Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
+            Repeater {
+                model: ["Weather", "Calendar", "Music"]
 
-                Button {
-                    id: button1
-                    text: window.lightMode ? qsTr("\u263D  Dark mode")
-                                           : qsTr("\u263C  Light mode")
-                    Layout.bottomMargin: 16
-                    Layout.alignment: Qt.AlignHCenter | Qt.AlignBottom
+                delegate: Rectangle {
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
 
-                    contentItem: Text {
-                        text: button1.text
-                        color: window.lightMode ? window.light : window.dark
-                        font: button1.font
-                        horizontalAlignment: Text.AlignHCenter
-                        verticalAlignment: Text.AlignVCenter
+                    radius: 20
+                    color: "#151E2B"
+
+                    Text {
+                        anchors.centerIn: parent
+                        text: modelData
+                        color: "white"
+                        font.pixelSize: 20
                     }
-
-                    background: Rectangle {
-                        implicitWidth: 120
-                        implicitHeight: 36
-                        radius: 8
-                        color: window.lightMode ? window.dark : window.light
-                    }
-
-                    onClicked: window.lightMode = !window.lightMode
                 }
             }
         }
     }
-
 }

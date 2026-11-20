@@ -23,6 +23,7 @@ qt_add_qml_module(appSmartHome
     QML_FILES
         Main.qml
         RESOURCES .gitignore
+        QML_FILES Sidebar.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
