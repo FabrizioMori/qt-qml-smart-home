@@ -33,6 +33,7 @@ qt_add_qml_module(appSmartHome
         AppComboBox.qml
         StatusCard.qml
         ApartmentOverviewWidget.qml
+        CameraWidget.qml
 
     RESOURCES
         assets/icons/dashboard.svg
@@ -70,6 +71,9 @@ qt_add_qml_module(appSmartHome
         assets/icons/apartment/climate.svg
         assets/icons/apartment/security.svg
         assets/icons/apartment/lock.svg
+        assets/images/camera/front-door-camera.png
+        assets/icons/camera/camera.svg
+
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

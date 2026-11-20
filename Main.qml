@@ -134,20 +134,11 @@ ApplicationWindow {
                 Layout.fillHeight: true
                 spacing: 12
 
-                // Camera preview
-                DashboardCard {
+                // Camera
+                CameraWidget {
                     Layout.fillWidth: true
-                    Layout.fillHeight: true
                     Layout.preferredWidth: 1
-
-                    topColor: "#264552"
-
-                    Text {
-                        anchors.centerIn: parent
-                        text: "Front Door Camera"
-                        color: "white"
-                        font.pixelSize: 20
-                    }
+                    Layout.fillHeight: true
                 }
 
                 // Energy consumption
