@@ -16,14 +16,39 @@ Rectangle {
         anchors.margins: 12
         spacing: 8
 
-        Text {
-            text: "My Home"
-            color: "#E9B65D"
-            font.pixelSize: 23
-            font.bold: true
-            Layout.leftMargin: 10
-            Layout.topMargin: 12
-            Layout.bottomMargin: 30
+        // App identity: colored house icon and title
+        RowLayout {
+            Layout.fillWidth: true
+            Layout.preferredHeight: 64
+            Layout.topMargin: 4
+            Layout.bottomMargin: 4
+            spacing: 8
+
+            Image {
+                Layout.preferredWidth: 40
+                Layout.preferredHeight: 40
+                source: Qt.resolvedUrl("assets/icons/home.svg")
+                sourceSize: Qt.size(80, 80)
+                fillMode: Image.PreserveAspectFit
+                smooth: true
+            }
+
+            Text {
+                Layout.fillWidth: true
+                text: "My Home"
+                color: "#E9B65D"
+                font.pixelSize: 20
+                font.bold: true
+                elide: Text.ElideRight
+            }
+        }
+
+        // Thin divider between app identity and navigation
+        Rectangle {
+            Layout.fillWidth: true
+            Layout.preferredHeight: 1
+            Layout.bottomMargin: 18
+            color: "#334152"
         }
 
         Repeater {
