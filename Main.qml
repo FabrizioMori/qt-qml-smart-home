@@ -153,8 +153,14 @@ ApplicationWindow {
                 condition: "Partly Cloudy"
             }
 
+            CalendarWidget {
+                Layout.fillWidth: true
+                Layout.preferredHeight: 270
+                Layout.fillHeight: false
+            }
+
             Repeater {
-                model: ["Calendar", "Music"]
+                model: ["Music"]
 
                 delegate: DashboardCard {
                     Layout.fillWidth: true
