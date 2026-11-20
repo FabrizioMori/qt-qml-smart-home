@@ -20,10 +20,18 @@ qt_add_executable(appSmartHome
 
 qt_add_qml_module(appSmartHome
     URI SmartHome
+
     QML_FILES
         Main.qml
-        RESOURCES .gitignore
-        QML_FILES Sidebar.qml
+        Sidebar.qml
+
+    RESOURCES
+        assets/icons/dashboard.svg
+        assets/icons/rooms.svg
+        assets/icons/cameras.svg
+        assets/icons/devices.svg
+        assets/icons/scenes.svg
+        assets/icons/settings.svg
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

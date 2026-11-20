@@ -5,10 +5,7 @@ import QtQuick.Layouts
 Rectangle {
     id: sidebar
 
-    // Public properties
     property string currentPage: "Dashboard"
-
-    // Signal emitted when a page is selected
     signal pageSelected(string page)
 
     color: "#151E2B"
@@ -19,65 +16,73 @@ Rectangle {
         anchors.margins: 12
         spacing: 8
 
-        // Application title
         Text {
             text: "My Home"
             color: "#E9B65D"
-            font.pixelSize: 24
+            font.pixelSize: 23
             font.bold: true
-
-            Layout.leftMargin: 8
-            Layout.bottomMargin: 32
+            Layout.leftMargin: 10
+            Layout.topMargin: 12
+            Layout.bottomMargin: 30
         }
 
-        // Navigation buttons
         Repeater {
             model: [
-                "Dashboard",
-                "Rooms",
-                "Cameras",
-                "Devices",
-                "Scenes",
-                "Settings"
+                { label: "Dashboard", icon: "dashboard" },
+                { label: "Rooms",     icon: "rooms" },
+                { label: "Cameras",   icon: "cameras" },
+                { label: "Devices",   icon: "devices" },
+                { label: "Scenes",    icon: "scenes" },
+                { label: "Settings",  icon: "settings" }
             ]
 
             delegate: Button {
                 id: navigationButton
 
-                Layout.fillWidth: true
-                Layout.preferredHeight: 46
+                readonly property bool selected: sidebar.currentPage === text
+                readonly property string iconName: modelData.icon
 
-                text: modelData
+                text: modelData.label
                 hoverEnabled: true
+                Layout.fillWidth: true
+                Layout.preferredHeight: 44
+                padding: 0
 
-                // Custom button background
                 background: Rectangle {
                     radius: 12
+                    color: navigationButton.selected ? "#3B3325"
+                           : navigationButton.hovered ? "#253141"
+                           : "transparent"
 
-                    color: sidebar.currentPage === navigationButton.text
-                           ? "#3B3325"
-                           : navigationButton.hovered
-                             ? "#253141"
-                             : "transparent"
+                    border.color: navigationButton.selected ? "#E9B65D" : "transparent"
+                    border.width: 1
 
-                    border.color: "#E9B65D"
-                    border.width: sidebar.currentPage === navigationButton.text
-                                  ? 1 : 0
+                    Behavior on color {
+                        ColorAnimation { duration: 130 }
+                    }
                 }
 
-                // Custom button text
-                contentItem: Text {
-                    text: navigationButton.text
+                contentItem: RowLayout {
+                    spacing: 10
 
-                    color: sidebar.currentPage === navigationButton.text
-                           ? "#E9B65D"
-                           : "#A1ADBC"
+                    Image {
+                        Layout.preferredWidth: 18
+                        Layout.preferredHeight: 18
+                        Layout.leftMargin: 13
+                        source: Qt.resolvedUrl("assets/icons/" + navigationButton.iconName + ".svg")
+                        sourceSize: Qt.size(36, 36)
+                        fillMode: Image.PreserveAspectFit
+                        opacity: navigationButton.selected ? 1.0 : 0.75
+                    }
 
-                    font.pixelSize: 15
-                    font.bold: sidebar.currentPage === navigationButton.text
-
-                    verticalAlignment: Text.AlignVCenter
-                    leftPadding: 14
+                    Text {
+                        text: navigationButton.text
+                        color: navigationButton.selected ? "#E9B65D" : "#A1ADBC"
+                        font.pixelSize: 14
+                        font.bold: navigationButton.selected
+                        verticalAlignment: Text.AlignVCenter
+                        Layout.fillWidth: true
+                    }
                 }
 
                 onClicked: {
@@ -87,17 +92,14 @@ Rectangle {
             }
         }
 
-        // Push content to the top
-        Item {
-            Layout.fillHeight: true
-        }
+        Item { Layout.fillHeight: true }
 
         Text {
             text: "Smart Home | Qt 6"
             color: "#657183"
             font.pixelSize: 11
-
             Layout.alignment: Qt.AlignHCenter
+            Layout.bottomMargin: 8
         }
     }
 }
