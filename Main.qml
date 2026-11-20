@@ -143,8 +143,18 @@ ApplicationWindow {
             Layout.fillHeight: true
             spacing: 16
 
+            WeatherWidget {
+                Layout.fillWidth: true
+                Layout.preferredHeight: 260
+                Layout.fillHeight: false
+
+                city: "Berlin"
+                temperature: 14
+                condition: "Partly Cloudy"
+            }
+
             Repeater {
-                model: ["Weather", "Calendar", "Music"]
+                model: ["Calendar", "Music"]
 
                 delegate: DashboardCard {
                     Layout.fillWidth: true

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="190" viewBox="0 0 260 190">
+  <defs>
+    <radialGradient id="light"><stop stop-color="#F8B82C" stop-opacity=".50"/><stop offset=".55" stop-color="#F2AE26" stop-opacity=".17"/><stop offset="1" stop-color="#F2AE26" stop-opacity="0"/></radialGradient>
+    <radialGradient id="sun"><stop stop-color="#FFEFA0"/><stop offset=".7" stop-color="#FFD35C"/><stop offset="1" stop-color="#F4AA22"/></radialGradient>
+    <linearGradient id="cloud" x1="0" y1="0" x2=".1" y2="1"><stop stop-color="#F2F4F2"/><stop offset=".5" stop-color="#BDC9CE"/><stop offset="1" stop-color="#647987"/></linearGradient>
+    <linearGradient id="cloud2" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#DDE8EC"/><stop offset="1" stop-color="#6F8797"/></linearGradient>
+  </defs>
+  <circle cx="183" cy="67" r="87" fill="url(#light)"/>
+  <circle cx="183" cy="63" r="38" fill="url(#sun)"/>
+  <g fill="url(#cloud2)" opacity=".57">
+    <ellipse cx="140" cy="134" rx="64" ry="25"/>
+    <ellipse cx="193" cy="131" rx="55" ry="28"/>
+    <circle cx="164" cy="112" r="31"/>
+  </g>
+  <g fill="url(#cloud)">
+    <rect x="36" y="112" width="184" height="48" rx="23"/>
+    <circle cx="77" cy="115" r="27"/>
+    <circle cx="113" cy="96" r="39"/>
+    <circle cx="157" cy="107" r="32"/>
+    <circle cx="195" cy="123" r="24"/>
+  </g>
+</svg>

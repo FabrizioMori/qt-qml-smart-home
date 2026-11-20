@@ -26,6 +26,7 @@ qt_add_qml_module(appSmartHome
         Sidebar.qml
         DashboardCard.qml
         AppDivider.qml
+        WeatherWidget.qml
 
     RESOURCES
         assets/icons/dashboard.svg
@@ -35,6 +36,11 @@ qt_add_qml_module(appSmartHome
         assets/icons/scenes.svg
         assets/icons/settings.svg
         assets/icons/home.svg
+        assets/icons/weather/cloud.svg
+        assets/icons/weather/hero.svg
+        assets/icons/weather/location.svg
+        assets/icons/weather/partly-cloudy.svg
+        assets/icons/weather/sun.svg
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
