@@ -65,34 +65,76 @@ ApplicationWindow {
             // Status cards
             RowLayout {
                 Layout.fillWidth: true
-                Layout.fillHeight: false
-                Layout.preferredHeight: 110
-
+                Layout.preferredHeight: 40
                 spacing: 12
 
-                Repeater {
-                    model: [
-                        "Wi-Fi",
-                        "Air Quality",
-                        "Energy",
-                        "Devices"
-                    ]
+                StatusCard {
+                    Layout.fillWidth: true
+                    Layout.preferredWidth: 1
+                    Layout.fillHeight: true
 
-                    delegate: DashboardCard {
-                        Layout.fillWidth: true
-                        Layout.fillHeight: true
-                        Layout.preferredWidth: 1
+                    title: "Wi-Fi"
+                    value: "Excellent"
+                    iconSource: Qt.resolvedUrl("assets/icons/status/wifi.svg")
+                    accentColor: "#59EFFF"
+                    iconGlowColor: "#14343D"
+                    showStatusDot: true
+                }
 
+                StatusCard {
+                    Layout.fillWidth: true
+                    Layout.preferredWidth: 1
+                    Layout.fillHeight: true
 
-                        topColor: "#264552"
+                    title: "Air Quality"
+                    value: "Good"
+                    iconSource: Qt.resolvedUrl("assets/icons/status/leaf.svg")
+                    accentColor: "#8DFF54"
+                    iconGlowColor: "#203826"
+                    showStatusDot: true
+                }
 
-                        Text {
-                            anchors.centerIn: parent
-                            text: modelData
-                            color: "white"
-                            font.pixelSize: 16
+                StatusCard {
+                    Layout.fillWidth: true
+                    Layout.preferredWidth: 1.4
+                    Layout.fillHeight: true
+
+                    title: "Energy (Today)"
+                    value: "8.4 kWh"
+                    subtitle: "↓ -12% vs. yesterday"
+                    iconSource: Qt.resolvedUrl("assets/icons/status/energy.svg")
+                    accentColor: "#FFD24A"
+                    iconGlowColor: "#3A3118"
+
+                    Row {
+                        anchors.verticalCenter: parent.verticalCenter
+                        spacing: 4
+
+                        Repeater {
+                            model: [8, 12, 16, 10, 18, 24]
+
+                            delegate: Rectangle {
+                                width: 5
+                                height: modelData
+                                radius: 2.5
+                                color: "#FFD24A"
+                                anchors.verticalCenter: parent.verticalCenter
+                            }
                         }
                     }
+                }
+
+                StatusCard {
+                    Layout.fillWidth: true
+                    Layout.preferredWidth: 1
+                    Layout.fillHeight: true
+
+                    title: "Connected Devices"
+                    value: "14"
+                    iconSource: Qt.resolvedUrl("assets/icons/status/devices.svg")
+                    accentColor: "#4BE9F3"
+                    iconGlowColor: "#143139"
+                    showStatusDot: true
                 }
             }
 
