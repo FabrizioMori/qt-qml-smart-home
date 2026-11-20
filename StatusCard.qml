@@ -34,6 +34,7 @@ DashboardCard {
         Item {
             Layout.preferredWidth: 44
             Layout.preferredHeight: 44
+            Layout.alignment: Qt.AlignVCenter
 
             Rectangle {
                 anchors.centerIn: parent
@@ -65,6 +66,10 @@ DashboardCard {
         // Text area
         ColumnLayout {
             Layout.fillWidth: true
+
+            Layout.fillHeight: false
+            Layout.alignment: Qt.AlignVCenter
+
             spacing: 1
 
             Text {
@@ -89,6 +94,7 @@ DashboardCard {
                 font.pixelSize: 10
                 elide: Text.ElideRight
             }
+
         }
 
         // Extra content on the right

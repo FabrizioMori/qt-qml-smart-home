@@ -34,6 +34,7 @@ qt_add_qml_module(appSmartHome
         StatusCard.qml
         ApartmentOverviewWidget.qml
         CameraWidget.qml
+        EnergyConsumptionWidget.qml
 
     RESOURCES
         assets/icons/dashboard.svg

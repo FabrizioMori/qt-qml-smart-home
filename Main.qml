@@ -55,7 +55,7 @@ ApplicationWindow {
             // Status cards
             RowLayout {
                 Layout.fillWidth: true
-                Layout.preferredHeight: 50
+                Layout.preferredHeight: 68
                 spacing: 12
 
                 StatusCard {
@@ -142,19 +142,10 @@ ApplicationWindow {
                 }
 
                 // Energy consumption
-                DashboardCard {
+                EnergyConsumptionWidget {
                     Layout.fillWidth: true
                     Layout.fillHeight: true
                     Layout.preferredWidth: 1
-
-                    topColor: "#264552"
-
-                    Text {
-                        anchors.centerIn: parent
-                        text: "Energy Consumption"
-                        color: "white"
-                        font.pixelSize: 20
-                    }
                 }
             }
         }
