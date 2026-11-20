@@ -77,43 +77,20 @@ DashboardCard {
 
             Item { Layout.fillWidth: true }
 
-            Rectangle {
-                id: monthPicker
-                Layout.preferredWidth: 93
-                Layout.preferredHeight: 27
-                color: "#263742"
-                radius: 10
-                border.color: "#3A4C58"
-                border.width: 1
+            AppComboBox {
+                Layout.preferredWidth: 105
+                Layout.preferredHeight: 30
 
-                RowLayout {
-                    anchors.fill: parent
-                    anchors.leftMargin: 9
-                    anchors.rightMargin: 7
-                    spacing: 3
+                model: [
+                    "Jan", "Feb", "Mar", "Apr",
+                    "May", "Jun", "Jul", "Aug",
+                    "Sep", "Oct", "Nov", "Dec"
+                ].map(month => month + " " + calendar.displayedYear)
 
-                    Text {
-                        Layout.fillWidth: true
-                        text: calendar.monthNames[calendar.displayedMonth]
-                              + " " + calendar.displayedYear
-                        color: "#F0F4F7"
-                        font.pixelSize: 11
-                        elide: Text.ElideRight
-                        verticalAlignment: Text.AlignVCenter
-                    }
+                currentIndex: calendar.displayedMonth
 
-                    Text {
-                        text: "v"
-                        color: "#F0F4F7"
-                        font.pixelSize: 11
-                        verticalAlignment: Text.AlignVCenter
-                    }
-                }
-
-                MouseArea {
-                    anchors.fill: parent
-                    cursorShape: Qt.PointingHandCursor
-                    onClicked: monthPopup.open()
+                onActivated: function(index) {
+                    calendar.displayedMonth = index
                 }
             }
         }

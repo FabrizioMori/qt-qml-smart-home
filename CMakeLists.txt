@@ -30,6 +30,7 @@ qt_add_qml_module(appSmartHome
         CalendarWidget.qml
         MusicWidget.qml
         MusicControlButton.qml
+        AppComboBox.qml
 
     RESOURCES
         assets/icons/dashboard.svg
@@ -54,7 +55,7 @@ qt_add_qml_module(appSmartHome
         assets/icons/music/pause.svg
         assets/icons/music/play.svg
         assets/icons/music/repeat.svg
-        assets/icons/music/chevron-down.svg
+        assets/icons/chevron-down.svg
         assets/images/music/golden-hour.svg
         assets/images/music/night-drive.svg
         assets/images/music/ocean-breeze.svg

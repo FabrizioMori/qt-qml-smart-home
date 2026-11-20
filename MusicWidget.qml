@@ -98,82 +98,17 @@ DashboardCard {
 
             Item { Layout.fillWidth: true }
 
-            ComboBox {
+            AppComboBox {
                 id: roomCombo
+
                 Layout.preferredWidth: 116
                 Layout.preferredHeight: 30
+
                 model: ["Living Room", "Bedroom", "Kitchen"]
                 currentIndex: 0
-                font.pixelSize: 11
-                onActivated: music.selectedRoom = currentText
 
-                background: Rectangle {
-                    radius: 10
-                    color: roomCombo.down ? "#344752" : "#273A45"
-                    border.width: 1
-                    border.color: "#41525C"
-                }
-
-                contentItem: Text {
-                    text: roomCombo.displayText
-                    color: "#E8EFF4"
-                    font.pixelSize: 11
-                    verticalAlignment: Text.AlignVCenter
-                    leftPadding: 10
-                    rightPadding: 24
-                    elide: Text.ElideRight
-                }
-
-                indicator: Image {
-                    x: roomCombo.width - width - 9
-                    y: (roomCombo.height - height) / 2
-                    width: 13
-                    height: 13
-                    source: Qt.resolvedUrl("assets/icons/music/chevron-down.svg")
-                    sourceSize: Qt.size(26, 26)
-                }
-
-                delegate: ItemDelegate {
-                    id: roomDelegate
-                    width: roomCombo.width - 8
-                    height: 30
-                    text: modelData
-                    font.pixelSize: 11
-                    highlighted: roomCombo.highlightedIndex === index
-
-                    contentItem: Text {
-                        text: roomDelegate.text
-                        color: "#E8EFF4"
-                        font.pixelSize: 11
-                        leftPadding: 8
-                        verticalAlignment: Text.AlignVCenter
-                    }
-
-                    background: Rectangle {
-                        radius: 7
-                        color: roomDelegate.highlighted ? "#3B535D" : "transparent"
-                    }
-                }
-
-                popup: Popup {
-                    y: roomCombo.height + 4
-                    width: roomCombo.width
-                    padding: 4
-                    implicitHeight: contentItem.implicitHeight + topPadding + bottomPadding
-
-                    contentItem: ListView {
-                        clip: true
-                        implicitHeight: contentHeight
-                        model: roomCombo.popup.visible ? roomCombo.delegateModel : null
-                        currentIndex: roomCombo.highlightedIndex
-                    }
-
-                    background: Rectangle {
-                        color: "#20313B"
-                        radius: 10
-                        border.width: 1
-                        border.color: "#41525C"
-                    }
+                onActivated: {
+                    music.selectedRoom = currentText
                 }
             }
         }
